@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ddg-mcp-server"
+version = "0.1.0"
+description = "DuckDuckGo MCP Server"
+readme = "README.md"
+requires-python = ">=3.12, <3.13"
+dependencies = [
+    "duckduckgo-search>=7.5.1",
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.3.0",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.9.10",
+]
+
+[project.urls]
+Homepage = "https://github.com/AshDevFr/duckduckgo-mcp-server"
+Issues = "https://github.com/AshDevFr/duckduckgo-mcp-server/issues"
+
+[project.scripts]
+ddg-mcp-server = "duckduckgo_mcp_server.main:run"
